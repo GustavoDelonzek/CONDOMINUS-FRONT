@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { AppShell } from './components/layout/AppShell';
+import { StatCard } from './components/ui/StatCard';
+import { Users } from 'lucide-react'; // Ícone exemplo
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function DashboardPage() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="space-y-8">
+      {/* Cabeçalho da Página */}
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold font-heading">Visão Geral</h1>
+        <button className="bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition">
+          Gerar Relatório
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* Grid de Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StatCard label="Total de Moradores" value="1,248" trend="+12% este mês" icon={<Users size={20}/>} />
+        <StatCard label="Inadimplência" value="R$ 12.450" icon={<Users size={20}/>} />
+        <StatCard label="Reservas Hoje" value="8" icon={<Users size={20}/>} />
+      </div>
+      
+      {/* Área de Tabelas/Gráficos viria aqui embaixo */}
+    </div>
+  );
 }
 
-export default App
+// No App.tsx você apenas envolve a página com o Shell
+export default function App() {
+  return (
+    <AppShell>
+      <DashboardPage />
+    </AppShell>
+  );
+}
