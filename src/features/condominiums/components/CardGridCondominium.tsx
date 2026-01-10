@@ -25,7 +25,7 @@ export function CardGridCondominium({
             <div className="h-36 w-full mb-4 bg-gray-100 rounded-t-lg overflow-hidden relative">
                 {image ? image : (
                     <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-200">
-                        <span className="text-sm">Sem imagem</span>
+                        <span className="text-sm md:text-base">Sem imagem</span>
                     </div>
                 )}
             </div>
@@ -36,37 +36,37 @@ export function CardGridCondominium({
                     <h3 className="text-md font-bold text-gray-900 leading-tight mb-1">
                         {condominium.name}
                     </h3>
-                    <p className="text-xs text-gray-500 truncate">
+                    <p className="text-xs md:text-sm text-gray-500 truncate">
                         {condominium.address_full}
                     </p>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 mt-auto">
                     <div className="bg-secondary-light p-2 rounded-lg">
-                        <span className="block text-xs text-gray-500 uppercase font-semibold">Unidades</span>
-                        <span className="text-sm font-semibold text-gray-800">{units.toString()}</span>
+                        <span className="block text-xs md:text-sm text-gray-500 uppercase font-semibold">Unidades</span>
+                        <span className="text-sm md:text-base font-semibold text-gray-800">{units.toString()}</span>
                     </div>
                     <div className="bg-secondary-light p-2 rounded-lg">
-                        <span className="block text-xs text-gray-500 uppercase font-semibold">Moradores</span>
-                        <span className="text-sm font-semibold text-gray-800">{residents.toString()}</span>
+                        <span className="block text-xs md:text-sm text-gray-500 uppercase font-semibold">Moradores</span>
+                        <span className="text-sm md:text-base font-semibold text-gray-800">{residents.toString()}</span>
                     </div>
                     <div className="bg-secondary-light p-2 rounded-lg">
-                        <span className="block text-xs text-gray-500 uppercase font-semibold">Receita</span>
-                        <span className="text-sm font-semibold text-gray-800">{revenue ?? "N/A"}</span>
+                        <span className="block text-xs md:text-sm text-gray-500 uppercase font-semibold">Receita</span>
+                        <span className="text-sm md:text-base font-semibold text-gray-800">{revenue ?? "N/A"}</span>
                     </div>
                 </div>
                  <div className="mt-4 bg-secondary-light p-2 rounded-lg">
-                        <span className="block text-xs text-gray-500 uppercase font-semibold">Receita</span>
-                        <span className="text-sm font-semibold text-gray-800">{revenue ?? "N/A"}</span>
+                        <span className="block text-xs md:text-sm text-gray-500 uppercase font-semibold">Receita</span>
+                        <span className="text-sm md:text-base font-semibold text-gray-800">{revenue ?? "N/A"}</span>
                     </div>
                 
             </div>
 
             <div className='flex flex-col p-3 gap-2'> 
-                <button className='bg-primary text-sm cursor-pointer flex items-center justify-center rounded-lg text-white font-bold p-1 hover:bg-primary-dark transition'>
+                <button className='bg-primary text-sm md:text-base cursor-pointer flex items-center justify-center rounded-lg text-white font-bold p-1 hover:bg-primary-dark transition'>
                    <LogIn className='mr-1' size={16}/> Impersonate
                 </button>
-                 <button className='cursor-pointer text-sm rounded-lg border-1 shadow border-secondary-light text-gray-800 font-bold p-1 hover:bg-gray-200 transition'>
+                 <button className='cursor-pointer text-sm md:text-base rounded-lg border-1 shadow border-secondary-light text-gray-800 font-bold p-1 hover:bg-gray-200 transition'>
                     Configure
                 </button>
             </div>
